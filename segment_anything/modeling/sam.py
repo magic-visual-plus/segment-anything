@@ -152,7 +152,7 @@ class Sam(nn.Module):
             is given by original_size.
         """
         masks = F.interpolate(
-            masks,
+            masks.float(),
             (self.image_encoder.img_size, self.image_encoder.img_size),
             mode="bilinear",
             align_corners=False,
